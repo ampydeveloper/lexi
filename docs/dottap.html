@@ -1,0 +1,59 @@
+<html>
+    <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c24" id="h.6ihtk5aeqcsy"><span class="c21">.tap</span></h2>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c44">This is a special variable you can define yourself for any
+            stamp</span><span>,</span><span class="c44">&nbsp;text object, or circle. When you tap the
+        </span><span>object</span><span class="c44">, the function this variable points to will be called. Inside your
+            custom function, you can figure out which stamp</span><span>, text object, or circle</span><span
+            class="c44">&nbsp;was tapped by using the special variable </span><span class="c13">this</span><span
+            class="c1">.</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">This function puts some stamps on the screen. Whichever one you tap will
+            dance.</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ol class="c7 lst-kix_rtm7r389l9i1-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>function hello() {
+    &nbsp; this.dance()
+    &nbsp; c.change(this.name)
+    }
+    a = stamp('robot',200,250)
+    b = stamp('monkey',600,750)
+    c = text('Who should dance?',CENTER)
+    a.tap = hello
+    b.tap = hello</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">It works the same way for text objects. Whichever text object you tap will
+            dance.</span></p>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <ol class="c7 lst-kix_ad26boyskexl-0 start" start="1">
+        <div class="button-run-docs" index="1"></div><textarea>function hello() {
+    &nbsp; this.dance()
+    &nbsp; this.change('Wheeee!')
+    }
+    a = text('Me first!',CENTER,200,250)
+    b = text('No, me first!',CENTER,600,750)
+    c = text('Who should dance?',CENTER)
+    a.tap = hello
+    b.tap = hello</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <p class="c2"><span class="c0">And the same thing works for Circles as well. Whichever circle you tap will
+            dance.</span></p>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <ol class="c7 lst-kix_8d3vny31w837-0 start" start="1">
+        <div class="button-run-docs" index="2"></div><textarea>function hello() {
+    &nbsp; this.dance()
+    }
+    a = circle(200,300,'red')
+    b = circle(600,300,'blue')
+    c = text('Who should dance?',CENTER)
+    a.tap = hello
+    b.tap = hello</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c0"></span></p>
+</div>
+
+</html>

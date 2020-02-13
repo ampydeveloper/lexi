@@ -1,0 +1,57 @@
+<html>
+        <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c8 c13" id="h.8chifxjtsw20"><span>reset()</span></h2>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>Erases everything on the screen. If you pass it an optional color, it also fills the background
+            with that color.</span></p>
+    <p class="c6"><span></span></p>
+    <ul class="c10 lst-kix_eemc7mwf8rzj-0 start">
+        <li class="c4 c5"><span class="c11 c0">reset(</span><span class="c12 c0">COLOR</span><span
+                class="c21 c0">)</span></li>
+        <li class="c4 c5"><span class="c23 c11 c0">reset(</span><span class="c12 c0">RED, GREEN, BLUE</span><span
+                class="c11 c0">)</span></li>
+    </ul>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>Here's a little drawing program. Drag to draw. When you tap the bomb, everything you drew is
+            cleared.</span></p>
+    <p class="c4 c19"><span class="c0"></span></p>
+    <ol class="c10 lst-kix_695ipbjpi7am-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>function drag() {
+    &nbsp; stamp('splotch',x,y)
+    }
+    function clear() {
+    &nbsp; reset('red')
+    }
+    stamp('bomb').tap = clear
+    </textarea>
+    </ol>
+    <p class="c4 c19"><span class="c0"></span></p>
+    <p class="c8"><span>Here's an example of resetting the screen with a specific color. Run the code, then tap the
+            screen to reset.</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_rjw98npefzmo-0 start" start="1">
+        <div class="button-run-docs" index="1"></div><textarea>stamp('button')
+    function tap() {
+    &nbsp; reset('red')
+    }
+    </textarea>
+    </ol>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>You can also pass in three number values for the red, green, and blue color you want to fill the
+            screen with. Each number must be between 0 (for none of the color) to 255 (for all of the color). Run the
+            code, then tap the screen to reset. Experiment with the three numbers to see what colors you can
+            create.</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_5sn25faxtxft-0 start" start="1">
+        <div class="button-run-docs" index="2"></div><textarea>stamp('button')
+    function tap() {
+    &nbsp; reset(255,100,0)
+    }
+    </textarea>
+    </ol>
+    <p class="c4 c19"><span class="c0"></span></p>
+    <p class="c6"><span></span></p>
+</div>
+
+</html>

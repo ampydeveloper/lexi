@@ -1,0 +1,27 @@
+<html>
+    <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c2" id="h.8d55i8dz3lpq"><span class="c25">.wrap()</span></h2>
+    <h1 class="c2 c36" id="h.9lx41eraen0j"><span class="c1"></span></h1>
+    <p class="c2"><span class="c1">If the stamp's, text object's, or circle's center point is off the screen, "wrap" it
+            around so it's back on the screen. Useful for games like asteroids and pacman.</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">This program endlessly moves the rocket, the word 'rocket', and the circle upward.
+            When they reach the top of the screen, they wrap around to the bottom.</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ol class="c7 lst-kix_v83kpw6djr0e-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>c = circle(384,550,200,'light green')
+    rocket = stamp('rocket')
+    label = text('rocket',CENTER,384,700)
+    function loop() {
+    &nbsp; rocket.move(UP,20)
+    &nbsp; rocket.wrap()
+    &nbsp; label.move(UP,20)
+    &nbsp; label.wrap()
+    &nbsp; c.move(UP,20)
+    &nbsp; c.wrap()
+    }</textarea>
+    </ol>
+</div>
+
+</html>

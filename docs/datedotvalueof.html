@@ -1,0 +1,28 @@
+<html>
+<button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c8 c13" id="h.qvk74ibm2pp5"><span>Date.valueOf()</span></h2>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span class="c11 c0">Date.valueOf()</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>Under the covers, the Date object keeps track of time as the number of milliseconds since
+            January 1st, 1970. (This value is also known as a timestamp.) Date.valueOf() returns this value, which is
+            useful for doing math between two Dates.</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>Here's an example program that keeps track of how long it takes for you to press the
+            button.</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_6az8wo3wdlax-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>start = new Date()
+    button = stamp('button1').tap = stop
+    function stop() {
+    &nbsp; elapsed = Date.now() - start.valueOf()
+    &nbsp; text('It took you ' + elapsed + ' milliseconds',50,850)
+    &nbsp; text('to press the button.',50,900)
+    }
+    </textarea>
+    </ol>
+    <p class="c6"><span class="c0"></span></p>
+</div>
+
+</html>

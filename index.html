@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Lexi</title>
+
+  <meta name="viewport" content="width=460">
+
+  <link rel="stylesheet" href="lib/codemirror-5.43.0/lib/codemirror.css" />
+  <link rel="stylesheet" href="css/codemirror-custom.css" />
+  <link rel="stylesheet" href="css/www.css" />
+  <link rel="stylesheet" href="css/codepops.css" />
+  <link rel="stylesheet" href="css/hoc.css" />
+  <link rel="stylesheet" href="css/code.css" />
+
+  <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,500,600,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:500,700' rel='stylesheet' type='text/css'>
+  <script>
+    var codepops = codepops || {};
+    window['hasCodeMirrorLoaded'] = true;
+
+    codepops.getQueryParameter = function(name) {
+      var queryString = window.location.search.substr(1);
+      var parts = queryString.split('&');
+      for (var i = 0; i < parts.length; i++) {
+        var tuple = parts[i].split('=');
+        if (tuple[0] === name && tuple.length > 1) {
+          return decodeURIComponent(tuple[1]);
+        }
+      }
+      return undefined;
+    };
+
+    var windowLocation = '' + window.location.href;
+  </script>
+  <script src='lib/codemirror-5.43.0/lib/codemirror-5.43.0-compiled.js'></script>
+  <script src='/lib/soundmanager2/soundmanager2.js'></script>
+  <script src='/lib/soundmanager2/soundmanager2_settings.js'></script>
+
+  <script src='/lexi/helper/codepops.js'></script>
+  <script src='/lexi/helper/lexicode.js'></script>
+  <script src='/lexi/helper/jserrors.js'></script>
+  <script src='/lexi/resources/featureflags.js'></script>
+  <script src='/lexi/resources/googlefonts.js'></script>
+  <script src='/lexi/resources/fonts.js'></script>
+  <script src='/lexi/resources/sounds.js'></script>
+  <script src='/lexi/resources/songs.js'></script>
+  <script src='/lexi/resources/stamps.js'></script>
+  <script src='/lexi/resources/stampList.js'></script>
+  <script src='/lexi/resources/colors.js'></script>
+  <script src='/lexi/resources/pictures.js'></script>
+
+  <script src='/lexi/lexi.js'></script>
+  <script src='/lexi/drawingelement.js'></script>
+  <script src='/lexi/command.js'></script>
+  <script src='/lexi/stamp.js'></script>
+  <script src='/lexi/text.js'></script>
+  <script src='/lexi/circle.js'></script>
+  <script src='/lexi/line.js'></script>
+  <script src='/lexi/library-1.3.js'></script>
+</head>
+
+<body class="code-page">
+
+
+
+  <div id="button-run" onclick="runeditorcode()" class="hidden" style="display: none;">go</div>
+
+  <div id="headerbar">
+    <div id="headerbar-tour" class="visible">
+      <span class="headerbar-link only-visible-when-viewing-app" popdownid="assets-panel" onclick="openAssetsPanel()">
+        <img id="icon-assets" src="img/icon-assets.png" width="30"   height="30" alt="Assets" title="Click here to see assets you can use in your apps">
+      </span>
+    </div>
+  </div>
+
+  <div id="assets-panel" class="popdown visible" > <!-- style="width: 500px; left: auto; right: 0;"> -->
+    <div id="assets-header">
+      <div id="asset-tags" class="asset-tags">
+        <a href="#find-stamps" onclick="loadassets('find-stamps')" title="Stamps">Stamps</a>
+        <a href="#find-fills"  onclick="loadassets('find-fills')" title="Fills">Fills</a>
+        <a href="#find-colors" onclick="loadassets('find-colors')" title="Colors">Colors</a>
+        <a href="#find-sounds" onclick="loadassets('find-sounds')" title="Sounds">Sounds</a>
+        <a href="#find-songs"  onclick="loadassets('find-songs')"  title="Songs">Songs</a>
+        <a id="find-fonts-link"  onclick="loadassets('find-fonts')" href="#find-fonts" title="Fonts">Fonts</a>
+        <a id="find-commands-link"  onclick="loadassets('find-commands')" class="commands" href="#find-commands" title="Commands">Commands</a>
+        <!-- <a id="close-button" href="#coding"  style="float:right;margin-left:-15px;" onclick="closeAssetsPanel()" title="Close">
+          <img src="img/button-x-black.png" alt="Close button" title="Close" />
+        </a> -->
+      </div>
+    </div>
+    <div id="assets-content">
+      <center>Loading...</center>
+    </div>
+  </div>
+
+  <div id="tablet" class="welcome centered">
+    <div class="tablet-back">
+      <div id="tablet-overlay"></div>
+    </div>
+    <div class="tablet-front">
+      <canvas width="484" height="712" id="tablet-color"></canvas>
+      <div id="tablet-overlay"></div>
+      <div id="tablet-screen">
+        <div id="error-panel">
+          <h1>Oops! Bug!</h1>
+          <div id="error-help">
+            You have an error. Check your code carefully. Here's what the bug says:
+          </div>
+          <div id="error-message-panel">
+            <div id="error-line">On Line 5</div>
+            <div id="error-message">I don't know what <span class="code">a</span> is.</div>
+            <div id="error-translation">Error translation.</div>
+          </div>
+        </div>
+
+        <div id="coordinate-tick-panel" class="hidden">
+          <div id="coordinate-tick-x"></div>
+          <div id="coordinate-tick-y"></div>
+        </div>
+
+        <canvas width="768" height="1024" id="tablet-canvas" class="visible"></canvas>  <!-- main canvas-->
+      </div>
+      <div id="tablet-title">My Tablet</div>
+    </div>
+  </div>
+
+  <div id="page-panel" class="hidden" style="display: none; !important">
+    <div id="page-border">
+      <div id="page">
+        <div id="page-header">
+          <div id="page-icon"></div>
+          <input id="page-title" value="Beach Scene" />
+          <div id="page-author">by Developer</div>
+        </div>
+        <div id="editor-panel">
+          <textarea id="textarea-code" name="textarea-code">// Type here.
+        </textarea>
+        </div>
+      </div>
+    </div>
+    <div id="page-footer"></div>
+  </div>
+
+  <div id="preload-container">
+    <img src="img/icons-cute-large.png" id="icons-cute-large" alt="" />
+    <img src="img/stamp-not-found.png" id="stamp-not-found" alt="" />
+    <img src="img/tablet-i-color.png" id="tablet-i-color" alt="" />
+    <img src="img/tablet.png" alt="" />
+  </div>
+
+  <script>
+  var lexi = lexi || {};
+  </script>
+  <script src="./start.js" ></script>
+
+  <script>
+    loadassets('find-commands');
+    function openAssetsPanel() {
+      loadassets('find-commands');
+      document.getElementById('assets-panel').classList.remove('hidden');
+      document.getElementById('assets-panel').classList.add('visible');
+    }
+
+    function closeAssetsPanel() {
+      document.getElementById('assets-panel').classList.add('hidden');
+      document.getElementById('assets-panel').classList.remove('visible');
+    }
+  </script>
+
+</body>
+
+</html>

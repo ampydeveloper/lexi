@@ -1,0 +1,59 @@
+<html>
+    <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c8 c13" id="h.z9ee08ikqakk"><span>look() / peek()</span></h2>
+    <p class="c6"><span></span></p>
+    <ul class="c10 lst-kix_apq7or2czvb5-0 start">
+        <li class="c4 c5"><span class="c11 c0">look(</span><span class="c11 c0">x,y</span><span class="c11 c0">)</span>
+        </li>
+        <li class="c4 c5"><span class="c11 c0">peek(x,y)</span></li>
+    </ul>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>The look and peek functions return color information from a particular position on the screen.
+            They are very similar. With look(), the return value is a string. With peek, it's an object called a hash
+            that breaks out the red, green, and blue values.</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>Here's a sample of using look. Tapping on the spectrum draws lines of different colors on the
+            screen. You can also see what the return value of look() is in the upper right of the screen each time you
+            tap.</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_y1xkqbnndg4c-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>stamp('spectrum',384,1000)
+    a = text('',400,120)
+    function tap() {
+    &nbsp; hue = look(x,y)
+    &nbsp; a.change(hue)
+    &nbsp; color(hue)
+    &nbsp; line(0,0,768,1024,hue,10)
+    }
+    </textarea>
+    </ol>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>Here's an example of how you might use peek.</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_ikpgteqcyglk-0 start" start="1">
+        <div class="button-run-docs" index="1"></div><textarea>stamp('spectrum',384,1000)
+    function tap() {
+    &nbsp; hue = peek(x,y)
+    &nbsp; fill(hue.r,hue.g,hue.b)
+    }
+    </textarea>
+    </ol>
+    <p class="c6"><span class="c0"></span></p>
+    <p class="c8"><span class="c0">This example shows all of the different bits of information you get back when you
+            call peek().</span></p>
+    <p class="c6"><span class="c0"></span></p>
+    <ol class="c10 lst-kix_u8ezbksfaz3k-0 start" start="1">
+        <div class="button-run-docs" index="2"></div><textarea>stamp('spectrum',384,1000)
+    function tap() {
+    &nbsp; hue = peek(x,y)
+    &nbsp; text('r : ' + hue['r'],50,50)
+    &nbsp; text('g : ' + hue['g'],50,100)
+    &nbsp; text('b : ' + hue['b'],50,150)
+    &nbsp; text('rgb : ' + hue['rgb'],50,200)
+    }
+    </textarea>
+    </ol>
+</div>
+
+</html>

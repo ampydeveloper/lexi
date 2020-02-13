@@ -1,0 +1,76 @@
+<html>
+        <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c8 c13" id="h.vmnnh59orsz1"><span>If/Else Statements</span></h2>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span class="c38">When you're writing a program, you often want what happens to depend on a set of
+            rules that you establish. If </span><span class="c38 c20">this</span><span class="c38">&nbsp;is true, do
+        </span><span class="c38 c20">this</span><span class="c38">&nbsp;thing. If it isn't, do this </span><span
+            class="c38 c20">other</span><span class="c38">&nbsp;thing. These are called </span><span
+            class="c38 c20">conditional</span><span class="c38">&nbsp;or if/else statements.</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>Every if/else statement begins with a test that </span><span
+            class="c20">returns</span><span>&nbsp;(results in) either TRUE or FALSE. When the answer is TRUE, the code
+            inside the { } runs. It's as simple as that.</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>One more thing: Most if/else tests include the operators &lt; (is less than), &gt; (is greater
+            than), or == (is equal to). In code, the symbol = means "is assigned to", whereas == means "is equal
+            to".</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>This code asks the user for a secret password and displays a message that depends on their
+            answer.</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_mi0o9zz3uebe-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>secret = 'the rain in spain'
+answer = prompt('secret password?')
+if (answer == secret) {
+&nbsp; text('you got it!')
+}
+else {
+&nbsp; text('wrong. try again.')
+}
+</textarea>
+    </ol>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>This code makes a car move back and forth across the screen. It uses if statements to decide
+            when it should turn around.</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_g7lv40ptvn46-0 start" start="1">
+        <div class="button-run-docs" index="1"></div><textarea>car = stamp('car2',100,500)
+direction = RIGHT
+function loop() {
+&nbsp; car.move(direction,10)
+&nbsp; if (car.x == 700) {
+&nbsp; &nbsp; direction = LEFT
+&nbsp; }
+&nbsp; if (car.x &lt; 0) {
+&nbsp; &nbsp; direction = RIGHT
+&nbsp; }
+}
+</textarea>
+    </ol>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>This code stamps a grid of pigs on the screen. It uses an if statement to figure out when it
+            should start stamping the next row. It uses another if statement to figure out when it's done (it stops
+            looping).</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_3xzt63rj7tm3-0 start" start="1">
+        <div class="button-run-docs" index="2"></div><textarea>x = 0
+y = 0
+increment = 150
+function loop() {
+&nbsp; stamp('pig',x,y,100)
+&nbsp; x = x + increment
+&nbsp; if (x &gt; 768) {
+&nbsp; &nbsp; x = 10
+&nbsp; &nbsp; y = y + increment
+&nbsp; }
+&nbsp; if (y &gt; 1024) {
+&nbsp; &nbsp; loop = null
+&nbsp; }
+}
+</textarea>
+    </ol>
+</div>
+
+</html>

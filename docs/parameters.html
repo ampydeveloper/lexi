@@ -1,0 +1,46 @@
+<html>
+    <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c8 c13" id="h.hiik9y8pmvdz"><span>Parameters</span></h2>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span class="c38">In coding, a parameter is an option that you specify when you write a command.
+            Different commands have different parameters. Depending on the command, some parameters are required and
+            some are optional.</span></p>
+    <p class="c6"><span class="c38"></span></p>
+    <p class="c8"><span class="c38">Functions can also accept parameters when they are told to run. They use these
+            parameters to return results that can be different each time. This is a more complicated concept, but it's
+            an important part of coding.</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>This code moves a submarine across the screen as a song plays. Every command in the code
+            includes one or more parameters (separated by commas, between the parentheses).</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_58li5prxpv22-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>fill('underwater')
+    song('silly',20)
+    vehicle = stamp('submarine',0,500,700)
+    function loop() {
+    &nbsp; vehicle.move(RIGHT,5)
+    }
+    </textarea>
+    </ol>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>This code grows or shrinks the tree depending on where you tap on the screen. The function
+        </span><span class="c16">grow</span><span>&nbsp;accepts a parameter called </span><span
+            class="c16">age</span><span>, which it uses to change the size of the tree. The value of </span><span
+            class="c16">age</span><span>&nbsp;is set only when you tap the screen and </span><span
+            class="c20">call</span><span>&nbsp;(run) the function </span><span class="c16">grow</span><span>.</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_qvd7vwn49lj2-0 start" start="1">
+        <div class="button-run-docs" index="1"></div><textarea>tree = stamp('tree 3')
+    function grow(age) {
+    &nbsp; tree.size(age)
+    }
+    function tap() {
+    &nbsp; age = x * 3
+    &nbsp; grow(age)
+    }
+    </textarea>
+    </ol>
+</div>
+
+</html>

@@ -1,0 +1,145 @@
+<html>
+    <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c24" id="h.cqhalmpvao14"><span class="c21">.hits()</span></h2>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">Returns whether this stamp or text object "hits" something else, meaning it overlaps
+            with it.</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ul class="c7 lst-kix_kjanrixtcj6m-0 start">
+        <li class="c2 c5"><span class="c19">stamp.hits(</span><span class="c8">STAMP</span><span class="c19">)</span>
+        </li>
+        <li class="c2 c5"><span class="c19">stamp.hits(</span><span class="c8">NAME</span><span class="c19">)</span>
+        </li>
+        <li class="c2 c5"><span class="c19">stamp.hits(</span><span class="c8">X,Y</span><span class="c11">)</span></li>
+        <li class="c2 c5"><span class="c11">stamp.hits(TEXT)</span></li>
+        <li class="c2 c5"><span class="c11">stamp.hits(CIRCLE)</span></li>
+        <li class="c2 c5"><span class="c11">text.hits(STAMP)</span></li>
+        <li class="c2 c5"><span class="c11">text.hits(TEXT)</span></li>
+        <li class="c2 c5"><span class="c11">text.hits(X,Y)</span></li>
+        <li class="c2 c5"><span class="c11">text.hits(CIRCLE)</span></li>
+        <li class="c2 c5"><span class="c11">circle.hits(STAMP)</span></li>
+        <li class="c2 c5"><span class="c11">circle.hits(TEXT)</span></li>
+        <li class="c2 c5"><span class="c11">circle.hits(CIRCLE)</span></li>
+        <li class="c2 c5"><span class="c11">circle.hits(X,Y)</span></li>
+    </ul>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">If you pass in another stamp, it returns true if they overlap, or false if they do
+            not.</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ol class="c7 lst-kix_l2y99t8au2xq-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>a = stamp('apple',200,200)
+    b = stamp('phone',250,200)
+    if (a.hits(b) == true) {
+    &nbsp; text('The apple and phone touch!',100,600)
+    } else {
+    &nbsp; text('The apple and phone do not touch!',100,600)
+    }</textarea>
+    </ol>
+    <p class="c2 c39 c6"><span class="c0"></span></p>
+    <p class="c2"><span class="c1">You can also check whether or not a stamp and text object overlap.</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ol class="c7 lst-kix_1ltswbcc66h1-0 start" start="1">
+        <div class="button-run-docs" index="1"></div><textarea>a = stamp('apple',200,200)
+    b = text('phone',225,200)
+    if (a.hits(b) == true) {
+    &nbsp; text('The apple and phone touch!',100,600)
+    } else {
+    &nbsp; text('The apple and phone do not touch!',100,600)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <p class="c2"><span class="c1">Or see if two text objects overlap.</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ol class="c7 lst-kix_s0rxywgsccax-0 start" start="1">
+        <div class="button-run-docs" index="2"></div><textarea>a = text('apple',200,200,'red')
+    b = text('phone',275,200)
+    if (a.hits(b) == true) {
+    &nbsp; text('The apple and phone touch!',100,600)
+    } else {
+    &nbsp; text('The apple and phone do not touch!',100,600)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <p class="c2"><span class="c0">You can do all of these comparisons with circles, as well. Here's an example app
+            where dragging on the screen moves a small circle around. Any time it hits the large circle, the text or the
+            stamp, the button in the top left of the screen goes from red to green.</span></p>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <ol class="c7 lst-kix_ddd6bilf1xxg-0 start" start="1">
+        <div class="button-run-docs" index="3"></div><textarea>targetCircle = circle(384,200,100)
+    targetText = text('hit me!',300,550)
+    targetStamp = stamp('chalksquare',384,800,150)
+    hitter = circle(100,500,50,'green')
+    indicator = stamp('buttonred',100,100,100)
+    function touching() {
+    &nbsp; hitter.move(x,y)
+    &nbsp; if (hitter.hits(targetCircle) ||
+    &nbsp; &nbsp; &nbsp; hitter.hits(targetStamp) ||
+    &nbsp; &nbsp; &nbsp; hitter.hits(targetText)) {
+    &nbsp; &nbsp; indicator.change('buttongreen')
+    &nbsp; } else {
+    &nbsp; &nbsp; indicator.change('buttonred')
+    &nbsp; }
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2 c39 c6"><span class="c0"></span></p>
+    <p class="c2"><span class="c1">If you want to check a lot of stamps at once, you can pass in the name you're wanting
+            to test. You'll get back an array of the things your stamp collides with, or false if you don't collide with
+            anything. Note: you cannot search for text objects in the same way.</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ol class="c7 lst-kix_km74u3qmldl-0 start" start="1">
+        <div class="button-run-docs" index="4"></div><textarea>stamp('asteroid',100,100)
+    stamp('asteroid',100,200)
+    stamp('asteroid',100,300)
+    ship = stamp('rocket',350,200)
+    collisions = ship.hits('asteroid')
+    if (collisions) {
+    &nbsp; text('How many did I hit? ' + collisions.length,100,600)
+    } else {
+    &nbsp; text('My ship does not hit anything.',100,600)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">Or, you can check a specific x,y location to see if that point overlaps with your
+            stamp, text object, or circle. Here's a program that explodes the monkey if you touch it, or rotates the
+            word 'ape' if you touch that, or causes a circle to dance if you touch that.</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ol class="c7 lst-kix_zhqgvhrolosv-0 start" start="1">
+        <div class="button-run-docs" index="5"></div><textarea>monkey = stamp('monkey')
+    ape = text('ape',CENTER,400,200,150)
+    cir = circle(384,850)
+    function tap() {
+    &nbsp; if (monkey.hits(x,y)) {
+    &nbsp; &nbsp; monkey.explode()
+    &nbsp; }
+    &nbsp; if (ape.hits(x,y)) {
+    &nbsp; &nbsp; ape.rotate(RIGHT,360,1000)
+    &nbsp; }
+    &nbsp; if (cir.hits(x,y)) {
+    &nbsp; &nbsp; cir.dance()
+    &nbsp; }
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <p class="c2"><span>Sometimes it may look like the stamps aren't overlapping, but .hits will still return true.
+            That's because every stamp has a square "hit box". For stamps that are taller than they are wide, or
+            vice-versa, intersections between what looks like blank space can still count as a hit. In this example, the
+            rocket and the asteroid are intersecting, even though it looks like they're not.</span></p>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <ol class="c7 lst-kix_f1850dp4tw7b-0 start" start="1">
+        <div class="button-run-docs" index="6"></div><textarea>asteroid = stamp('asteroid',100,100)
+    ship = stamp('rocket',250,200)
+    if (ship.hits(asteroid)) {
+    &nbsp; text('Hit!',100,600)
+    } else {
+    &nbsp; text('Miss.',100,600)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+</div>
+
+</html>

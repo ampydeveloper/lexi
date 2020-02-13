@@ -1,0 +1,43 @@
+<html>
+    <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c8 c13" id="h.k40exdv9cyhf"><span>repeat()</span></h2>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span class="c38">Bitsbox's repeat command makes it easier to tell any custom function in your code to
+            run more than once. There are two parameters (options) in the repeat command: The first is the name of the
+            function you want to repeat. The second is the number of times you want it to repeat.</span></p>
+    <p class="c6"><span class="c38"></span></p>
+    <p class="c8"><span class="c38">The repeat command also has a special trick up its sleeve. It automatically passes
+            its function a number that increases by 1 every time the function is run. You can use this </span><span
+            class="c38 c20">parameter</span><span class="c38">&nbsp;to customize the output of the function.</span></p>
+    <p class="c6"><span></span></p>
+    <ul class="c10 lst-kix_fleg58g05ind-0 start">
+        <li class="c4 c5"><span class="c11 c0">repeat(</span><span class="c21 c0">FUNCTION, COUNT)</span></li>
+    </ul>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>Here's a little program that draws eight pigs on the screen.</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_puvlt8iy3ke-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>function pig() {
+    &nbsp; x = random(800)
+    &nbsp; y = random(1000)
+    &nbsp; stamp('pig',x,y)
+    }
+    repeat(pig,8)
+    </textarea>
+    </ol>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>When your function is called, it is passed a count parameter you can do math with.</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_rtzld0a9dvnh-0 start" start="1">
+        <div class="button-run-docs" index="1"></div><textarea>function stackedpig(count) {
+    &nbsp; y = count * 100
+    &nbsp; stamp('pig',100,y)
+    }
+    repeat(stackedpig,8)
+    </textarea>
+    </ol>
+    <p class="c4 c19"><span class="c0"></span></p>
+</div>
+
+</html>

@@ -1,0 +1,41 @@
+<html>
+    <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c24" id="h.uw0mhbkfx3fd"><span class="c21">.rotation</span></h2>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">This contains the rotation of the stamp, in degrees. For example, this will add the
+            text "90" and then "180".</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ol class="c7 lst-kix_iyv2jh9g4evp-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>a = stamp('arrow',100,400)
+    a.rotate(RIGHT,90)
+    text(a.rotation,100,800)
+    a.rotate(RIGHT,90)
+    text(a.rotation,100,900)</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <p class="c2"><span class="c1">It works the same way for text objects. This code will add the text "45" and then
+            "135".</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ol class="c7 lst-kix_aqdai96uvq8w-0 start" start="1">
+        <div class="button-run-docs" index="1"></div><textarea>a = text('arrow',100,400,CENTER)
+    a.rotate(RIGHT,45)
+    text(a.rotation,100,800)
+    a.rotate(RIGHT,90)
+    text(a.rotation,100,900)</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">And it works the same way for circles (even though you can't see the circle
+            rotating). This code will add the text "180" and then "270".</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ol class="c7 lst-kix_odycwoylvph7-0 start" start="1">
+        <div class="button-run-docs" index="2"></div><textarea>a = circle(384,512)
+    a.rotate(RIGHT,180)
+    text(a.rotation,100,800)
+    a.rotate(RIGHT,90)
+    text(a.rotation,100,900)</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+</div>
+
+</html>

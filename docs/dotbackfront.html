@@ -1,0 +1,64 @@
+<html>
+    <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c24" id="h.7ny8s2kw6b1h"><span class="c34 c43">.</span><span class="c21">back() / .front()</span></h2>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">Normally when you put down a series of stamps, the most recent one is in "front" of
+            the others. For example, if you run these two lines of code, the apple is in front of the watermelon, since
+            the apple was stamped last.</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ol class="c7 lst-kix_t0g7unbrsj94-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>w = stamp('watermelon')
+    a = stamp('apple')</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">However, if we add a third line of code that calls front(), we can make the
+            watermelon jump in front of the apple.</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ol class="c7 lst-kix_si6dbzbq8uaa-0 start" start="1">
+        <div class="button-run-docs" index="1"></div><textarea>w = stamp('watermelon')
+    a = stamp('apple')
+    w.front()</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">And the back() command does the opposite. When we tap, let's hide the monkey behind
+            the house.</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ol class="c7 lst-kix_y1iiwcff09lu-0 start" start="1">
+        <div class="button-run-docs" index="2"></div><textarea>stamp('house',200)
+    monkey = stamp('monkey')
+    function tap() {
+    &nbsp; monkey.back()
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">The front() and back() commands can also be called on a Text object. In this code,
+            tapping brings the text to the front.</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ol class="c7 lst-kix_oaypse1shoxv-0 start" start="1">
+        <div class="button-run-docs" index="3"></div><textarea>boo = text('Booo!',325,600,50)
+    stamp('ghost',500)
+    function tap() {
+    &nbsp; boo.front()
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">This also works for circles. In this code, tapping each circle will bring it to the
+            front.</span></p>
+    <ol class="c7 lst-kix_l7upxofig8im-0 start" start="1">
+        <div class="button-run-docs" index="4"></div><textarea>r = circle(400,500,'red')
+    r.tap = redFront
+    g = circle(500,600,'green')
+    g.tap = greenFront
+    function redFront() {
+    &nbsp; r.front()
+    }
+    function greenFront() {
+    &nbsp; g.front()
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+</div>
+
+</html>

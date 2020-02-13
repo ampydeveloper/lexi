@@ -1,0 +1,39 @@
+<html>
+        <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c8 c13" id="h.wl4q6xnafs02"><span>Logical Operators</span></h2>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>Programming languages use a lot of symbols that are abbreviations for important concepts. Among
+            the most common are Boolean And (&amp;&amp;) and Boolean Or (||). These are generally used as part of an IF
+            statement.</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>The Boolean And ties together two or more booleans (a variable or statement that results in a
+            true/false value). For example, if I only wear my raincoat on days when I have to go to school And it's
+            raining, I can express that like this:</span></p>
+    <ol class="c10 lst-kix_wzg7bdpdqjoq-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>weekday = true
+    raining = true
+    if (weekday &amp;&amp; raining) {
+    &nbsp; text('Better wear your raincoat',75,500)
+    }
+    </textarea>
+    </ol>
+    <p class="c8"><span>The contents of the if block will only be executed if both the variables are true.</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>The Boolean Or also ties together two or more booleans, but it evaluates to true if any of the
+            variables are true. For example, if I get to sleep in on the weekends Or on snow days, I can express that
+            like this:</span></p>
+    <ol class="c10 lst-kix_nvwtxrpxqm5c-0 start" start="1">
+        <div class="button-run-docs" index="1"></div><textarea>weekend = false
+    snowday = true
+    if (weekend || snowday) {
+    &nbsp; text('Sleep in today!')
+    }
+    </textarea>
+    </ol>
+    <p class="c8"><span>The contents of the if block will be executed if it's a weekend, or if it's a snow day (or if
+            it's both a weekend and a snow day).</span></p>
+    <p class="c6"><span class="c3 c0"></span></p>
+</div>
+
+</html>

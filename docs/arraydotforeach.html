@@ -1,0 +1,33 @@
+<html>
+<div class="docs-panel">
+    <h2 class="c8 c13" id="h.a8i99iq9t79s"><span>Array.forEach</span></h2>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span class="c11 c0">Array.forEach(</span><span class="c21 c0">CALLBACK</span><span
+            class="c11 c0">)</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>This function executes a callback function on each entry in an array. </span></p>
+    <p class="c8"><span>In this example, ten pigs are stamped at random locations on the screen. When you tap the
+            screen, the boom function is called for each pig.</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_n3bqr8r0mp0m-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>stamps = []
+    for (i = 0; i &lt; 10; i++) {
+    &nbsp; pig = stamp('pig').move()
+    &nbsp; stamps.push(pig)
+    }
+    function tap() {
+    &nbsp; stamps.forEach(boom)
+    }
+    function boom(pig) {
+    &nbsp; if (pig.x &gt;= 512 || pig.y &gt;= 700) {
+    &nbsp; &nbsp; pig.explode()
+    &nbsp; }
+    }
+    </textarea>
+    </ol>
+    <p class="c6"><span></span></p>
+    <p class="c6"><span></span></p>
+    <p class="c6"><span></span></p>
+</div>
+
+</html>

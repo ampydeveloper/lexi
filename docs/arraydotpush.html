@@ -1,0 +1,33 @@
+<html>
+<div class="docs-panel">
+    <h2 class="c8 c13" id="h.2dtkw4w48dpo"><span>Array.push</span></h2>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span class="c11 c0">Array.push(</span><span class="c21 c0">ELEMENT1,</span><span
+            class="c21 c35 c0">&nbsp;... ,</span><span class="c21 c0 c35">&nbsp;ELEMENTN</span><span
+            class="c11 c0">)</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>This function adds an item to the end of an array. You can hand in multiple items if you like,
+            but at least one is required. The length of the array is automatically increased as a result of calling
+            push.</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>This example program prompts you for the names of your friends, and adds those to an array using
+            push.</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_lewjgcr1kd81-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>friends = []
+    text('Press the button to add a friend',100,100)
+    stamp('button1',400,300).tap = add
+    a = text('',50,750)
+    function add() {
+    &nbsp; friend = prompt('What is your friends name?')
+    &nbsp; friends.push(friend)
+    &nbsp; a.change(friends.join(', '))
+    }
+    </textarea>
+    </ol>
+    <p class="c6"><span></span></p>
+    <p class="c6"><span></span></p>
+    <p class="c6"><span></span></p>
+</div>
+
+</html>

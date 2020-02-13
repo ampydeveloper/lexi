@@ -1,0 +1,55 @@
+<html><button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c24" id="h.pj972lqmm0qx"><span class="c21">.hide() / .show()</span></h2>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">Hides or shows a stamp, text object, or circle. Here's a program that hides or shows
+            a stamp, some text, and a circle every time you tap the screen.</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ol class="c7 lst-kix_kolk3dplgeee-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>c = circle(384,512,200,'pink')
+    w = stamp('watermelon')
+    t = text('watermelon',300,600)
+    function tap() {
+    &nbsp; if (w.hidden) {
+    &nbsp; &nbsp; w.show()
+    &nbsp; &nbsp; t.show()
+    &nbsp; &nbsp; c.show()
+    &nbsp; } else {
+    &nbsp; &nbsp; w.hide()
+    &nbsp; &nbsp; t.hide()
+    &nbsp; &nbsp; c.hide()
+    &nbsp; }
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <p class="c2"><span class="c14">Note that hiding a stamp, text object, or circle does not delete it. Once you add an
+            object, it never gets deleted unless you call reset().</span></p>
+    <p class="c2 c6"><span class="c14"></span></p>
+    <p class="c2"><span class="c14">Hidden stamps (whether they got that way via hide() or explode() or pop()) generally
+            don't interact with the "world". For example, if you check for hit() vs. a hidden sprite, false will be
+            returned.</span></p>
+    <p class="c2 c6"><span class="c14"></span></p>
+    <p class="c2"><span class="c14">This code will show text, because both stamps are visible and overlap.</span></p>
+    <p class="c2 c6"><span class="c14"></span></p>
+    <ol class="c7 lst-kix_3bv9bx263m7b-0 start" start="1">
+        <div class="button-run-docs" index="1"></div><textarea>a = stamp('apple')
+    b = stamp('boy')
+    if (a.hits(b)) {
+    &nbsp; text('they hit!',300,700)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c37"></span></p>
+    <p class="c2"><span class="c14">This will not show text, because one of the stamps is hidden, and therefore can't be
+            "hit."</span></p>
+    <p class="c2 c6 c56"><span class="c14"></span></p>
+    <ol class="c7 lst-kix_uid9evdn1n3s-0 start" start="1">
+        <div class="button-run-docs" index="2"></div><textarea>a = stamp('apple')
+    b = stamp('boy')
+    b.hide()
+    if (a.hits(b)) {
+    &nbsp; text('they hit!',300,700)
+    }</textarea>
+    </ol>
+</div>
+
+</html>

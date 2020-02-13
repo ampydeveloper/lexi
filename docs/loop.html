@@ -1,0 +1,51 @@
+<html>
+    <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c8 c13" id="h.vxmhaf3qvdfc"><span>loop()</span></h2>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>The loop function is called by Bitsbox twenty times every second. Define your own loop function
+            to repeat some code over and over.</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>Here's a program. Its loop function draws an apple on the screen, each time a different
+            size.</span></p>
+    <p class="c6"><span class="c0"></span></p>
+    <ol class="c10 lst-kix_emfbvn4p5b6o-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>function loop() {
+    &nbsp; stamp('apple',random(100))
+    }
+    </textarea>
+    </ol>
+    <p class="c6"><span class="c0"></span></p>
+    <p class="c8"><span>Here's one that uses a counter to fade the screen color from black to white.</span></p>
+    <p class="c6"><span class="c0"></span></p>
+    <ol class="c10 lst-kix_7hxhw6ipacx-0 start" start="1">
+        <div class="button-run-docs" index="1"></div><textarea>i = 0
+    function loop() {
+    &nbsp; i = i + 1
+    &nbsp; red = i
+    &nbsp; green = i
+    &nbsp; blue = i
+    &nbsp; fill(red,green,blue)
+    }
+    </textarea>
+    </ol>
+    <p class="c6"><span class="c0"></span></p>
+    <p class="c8"><span>Often you may want to </span><span class="c20">stop </span><span>a loop operation once an event
+            occurs, such as when a game is won or lost. In such a case, setting the loop function to null will do what
+            you need.</span></p>
+    <p class="c6"><span class="c0"></span></p>
+    <ol class="c10 lst-kix_p93k7jm21o5a-0 start" start="1">
+        <div class="button-run-docs" index="2"></div><textarea>i = 0
+    function loop() {
+    &nbsp; i = i + 1
+    &nbsp; if (i == 10) {
+    &nbsp; &nbsp; text('Ten loops run. Game over',100,500)
+    &nbsp; &nbsp; loop = null
+    &nbsp; }
+    }
+    </textarea>
+    </ol>
+    <p class="c6"><span></span></p>
+</div>
+
+</html>

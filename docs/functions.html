@@ -1,0 +1,38 @@
+<html>
+        <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c8 c13" id="h.420621ize38s"><span>Functions</span></h2>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span class="c38">A function is a set of commands that are grouped together and named so that they can
+            be used more easily in your code. You should create a function if you need your program to do the same
+            sequence of commands more than once. Using functions makes your code shorter and easier to manage.</span>
+    </p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>Bitsbox has two kinds of functions: </span><span class="c20">built-in
+            functions</span><span>&nbsp;and </span><span class="c20">custom functions</span><span>.</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>You use some of Bitsbox's built-in functions—like tap, touching, and drag—to tell your program
+            what to do when the user interacts with the tablet. Other built-in functions—like loop—make your program do
+            something even when no one's interacting with it.</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>Custom functions are… custom. You create them whenever you need them and call them whatever you
+            like.</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>This code stamps a monster and plays a sound every time the user taps the screen. The function
+            tap is built in to Bitsbox. The function draw is a custom function we wrote and named ourselves.</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_9ztvnq2dqb15-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>size = 100
+    function draw() {
+    &nbsp; stamp('monster',size)
+    &nbsp; sound('bloop')
+    &nbsp; size = size + 50
+    }
+    function tap() {
+    &nbsp; draw()
+    }
+    </textarea>
+    </ol>
+</div>
+
+</html>

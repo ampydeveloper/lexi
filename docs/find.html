@@ -1,0 +1,34 @@
+<html>
+    <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c8 c13" id="h.3hk2x8bqzqdj"><span>find()</span></h2>
+    <p class="c6 c15"><span></span></p>
+    <p class="c8 c15"><span>Finds all of the stamps with a given name.</span></p>
+    <p class="c6 c15"><span></span></p>
+    <ul class="c10 lst-kix_bik9ykj4zg20-0 start">
+        <li class="c4 c5 c15"><span class="c11 c0">find(</span><span class="c21 c20 c0">NAME</span><span
+                class="c21 c0">)</span></li>
+    </ul>
+    <p class="c6 c15"><span></span></p>
+    <p class="c8 c15"><span>This is a powerful function if you want all of your stamps of a given type to behave in
+            complex ways. It's especially useful with the forEach method, which calls your custom function using each of
+            the stamps in an array.</span></p>
+    <p class="c6 c15"><span></span></p>
+    <p class="c8 c15"><span>For example, this code adds an apple wherever you tap, and makes any apple on the screen
+            rotate.</span></p>
+    <p class="c6 c15"><span></span></p>
+    <ol class="c10 lst-kix_mqucdpvxkkdo-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>function tap() {
+    &nbsp; stamp('apple',x,y)
+    }
+    function loop() {
+    &nbsp; find('apple').forEach(spin)
+    }
+    function spin(thing) {
+    &nbsp; thing.rotate(RIGHT,10)
+    }
+    </textarea>
+    </ol>
+</div>
+
+</html>
