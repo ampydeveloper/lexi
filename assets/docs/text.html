@@ -1,0 +1,91 @@
+<html>
+    <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c24 c23" id="h.e3fivwap9j39"><span class="c12 c7">text()</span></h2>
+    <p class="c6 c10"><span class="c1"></span></p>
+    <p class="c6"><span class="c1">Use Lexi's text command to write words on the screen. You can make text any size
+            and any color that you want.</span></p>
+    <p class="c6 c10"><span class="c5"></span></p>
+    <p class="c6"><span>You can use the text command with a lot of different </span><span
+            class="c36">parameters</span><span class="c1">, or options.</span></p>
+    <p class="c6 c10"><span class="c1"></span></p>
+    <ul class="c8 lst-kix_xhayagi5ueuh-0 start">
+        <li class="c0"><span class="c7 c18">text(</span><span class="c7 c22">TEXT, </span><span class="c11 c7 c32">X, Y,
+                SIZE, COLOR, FONT, ALIGNMENT</span><span class="c31 c7 c18">)</span></li>
+    </ul>
+    <p class="c6 c27 c10"><span class="c31 c7 c18"></span></p>
+    <p class="c6"><span class="c1">The most basic usage requires nothing but the text you want to print. You can write
+            out strings, numbers, or variables.</span></p>
+    <p class="c6 c10"><span class="c1"></span></p>
+    <ol class="c8 lst-kix_cgoo75prboch-0 start" start="1">
+        <div class="comment">Writes the word 'hello!'.</div>
+        <div class="button-run-docs" index="0"></div><textarea>text('hello!')</textarea>
+        <div class="comment">Writes the number 42.</div>
+        <div class="button-run-docs" index="1"></div><textarea>text(42)</textarea>
+    </ol>
+    <p class="c6 c10"><span class="c1"></span></p>
+    <p class="c6"><span class="c1">This program combines the words 'you' and 'me' and prints it to the screen.</span>
+    </p>
+    <p class="c6 c10"><span class="c1"></span></p>
+    <ol class="c8 lst-kix_fj0erdlse8gr-0 start" start="1">
+        <div class="button-run-docs" index="2"></div><textarea>words = 'you '
+    words = words + 'me'
+    text(words)</textarea>
+    </ol>
+    <p class="c6 c27 c10"><span class="c1"></span></p>
+    <p class="c6"><span class="c1">You can control your text's appearance with additional parameters.</span></p>
+    <p class="c6 c10"><span class="c1"></span></p>
+    <ol class="c8 lst-kix_5ts6zcwgk2tm-0 start" start="1">
+        <div class="comment">Writes the word 'Bob' at position 100,100.</div>
+        <div class="button-run-docs" index="3"></div><textarea>text('Bob',100,100)</textarea>
+        <div class="comment">Writes the word 'Sam' in red.</div>
+        <div class="button-run-docs" index="4"></div><textarea>text('Sam','red')</textarea>
+        <div class="comment">Writes the word 'Go' at 90,90 in tan.</div>
+        <div class="button-run-docs" index="5"></div><textarea>text('Go',90,90,'tan')</textarea>
+        <div class="comment">Writes 'Big' at position 10,600 but 500 pixels tall.</div>
+        <div class="button-run-docs" index="6"></div><textarea>text('Big',10,600,500)</textarea>
+        <div class="comment">Writes 'Tiny' in red and 10 pixels tall.</div>
+        <div class="button-run-docs" index="7"></div><textarea>text('Tiny',10,'red')</textarea>
+    </ol>
+    <p class="c6 c27 c10"><span class="c1"></span></p>
+    <p class="c6"><span class="c1">If you assign a text command to a variable, you can then call a .change() command to
+            alter the text. For example, this program adds to the score every time you tap.</span></p>
+    <p class="c6 c10"><span class="c1"></span></p>
+    <ol class="c8 lst-kix_ha0gj94y9gfa-0 start" start="1">
+        <div class="button-run-docs" index="8"></div><textarea>score = 0
+    scoreboard = text('Click to score!')
+    function tap() {
+    &nbsp; score = score + 1
+    &nbsp; scoreboard.change(score)
+    }</textarea>
+    </ol>
+    <p class="c6 c27 c10"><span class="c1"></span></p>
+    <p class="c6"><span class="c1">You can also tell the command to use a specific font. Fonts that you can use include:
+            'arial', 'century', 'console', 'courier', 'gadget', 'georgia', 'gill', 'hand', 'impact', 'lucida', 'mono',
+            'narrow', 'palatino', 'roboto', 'sans', 'serif', 'tahoma', 'times', 'trebuchet', and 'verdana'.</span></p>
+    <p class="c6"><span class="c1">You can also use one of the many fonts made available by Google. You can see a
+            complete list of available fonts under the Fonts tab. These fonts may take a few seconds to load; if the
+            text doesn't look right, wait a bit and hit the run button again.</span></p>
+    <p class="c6 c10"><span class="c1"></span></p>
+    <ol class="c8 lst-kix_yobo2msi01ql-0 start" start="1">
+        <div class="button-run-docs" index="9"></div><textarea>text('This is Century',100,100,'century')
+    text('This is Console',100,200,'console')
+    text('This is Courier',100,300,'courier')
+    text('This is Georgia',100,400,'georgia')
+    text('This is Permanent Marker',100,500,'permanent marker')
+    text('This is Ruge Boogie',100,650,100,'ruge boogie')
+    text('This is Faster One',100,750,60,'faster one')
+    text('This is Monoton',100,850,70,'monoton')
+    text('This is Bungee Shade',100,950,'bungee shade')</textarea>
+    </ol>
+    <p class="c6 c10"><span class="c1"></span></p>
+    <p class="c6"><span class="c1">You can also tell the text to be LEFT, RIGHT, or CENTER aligned.</span></p>
+    <p class="c6 c10"><span class="c1"></span></p>
+    <ol class="c8 lst-kix_ykj2x59f17f7-0 start" start="1">
+        <div class="button-run-docs" index="10"></div><textarea>text('Left Aligned......',375,100,LEFT)
+    text('.....Right Aligned',375,150,RIGHT)
+    text('..Center Aligned..',375,200,CENTER)</textarea>
+    </ol>
+</div>
+
+</html>

@@ -1,0 +1,56 @@
+<html><button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c8 c13" id="h.xar89khqp232"><span>random()</span></h2>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span class="c38">Randomness is an important concept in coding. It's used all the time, particularly
+            for making games. Lexi's random command either generates a random number in a specified range, or
+            randomly picks a value from a given list.</span></p>
+    <p class="c6"><span></span></p>
+    <ul class="c10 lst-kix_nhr22ibess49-0 start">
+        <li class="c4 c5"><span class="c11 c0">random(</span><span class="c21 c20 c0">VALUE, VALUE2</span><span
+                class="c21 c0">)</span></li>
+    </ul>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>What you get depends on how you call the command.</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>This program creates a random number between 1 and 200, then draws a bird at that size.</span>
+    </p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_x9jqf0v5419o-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>a = random(200)
+    bird = stamp('bird',a)
+    </textarea>
+    </ol>
+    <p class="c6"><span class="c0"></span></p>
+    <p class="c8"><span>This program creates a randomly rotated bird.</span></p>
+    <p class="c8"><span class="c0">&nbsp;</span></p>
+    <ol class="c10 lst-kix_x3gb36qlilq6-0 start" start="1">
+        <div class="button-run-docs" index="1"></div><textarea>angle = random(-90,90)
+    bird = stamp('bird')
+    bird.rotate(angle)
+    </textarea>
+    </ol>
+    <p class="c6"><span class="c0"></span></p>
+    <p class="c8"><span>This program draws one of three random animals.</span><span class="c0">&nbsp;</span></p>
+    <p class="c6"><span class="c0"></span></p>
+    <ol class="c10 lst-kix_svdbxwge6qhv-0 start" start="1">
+        <div class="button-run-docs" index="2"></div><textarea>c = random('cow','bear','pig')
+    stamp(c)
+    </textarea>
+    </ol>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>This program creates an array of groceries, then picks one of them.</span><span
+            class="c0">&nbsp;</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_wjxkct8adg5k-0 start" start="1">
+        <div class="button-run-docs" index="3"></div><textarea>groceries = []
+    groceries.push('apples')
+    groceries.push('ice cream')
+    groceries.push('pies')
+    d = random(groceries)
+    text('Remember to get some ' + d,50,500)
+    </textarea>
+    </ol>
+</div>
+
+</html>

@@ -1,0 +1,58 @@
+<html>
+        <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c8 c13 c33" id="h.jzcf07nw6s0w"><span>stamp()</span></h2>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>The stamp command is Lexi's way of making it easy to add interesting graphics to your apps.
+            You can "stamp" any image from Lexi's library anywhere on the screen, at any size.</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>There are lots and lots of stamps to choose from, from flowers to aliens to airplanes. See a
+            list of available stamps by clicking the 'stamps' link above.</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>You can use the stamp command with a lot of different </span><span
+            class="c20">parameters</span><span>, or options.</span></p>
+    <p class="c6"><span></span></p>
+    <ul class="c10 lst-kix_5blsipi2dq7i-0 start">
+        <li class="c4 c5"><span class="c11 c0">stamp(</span><span class="c21 c0">NAME, </span><span class="c12 c0">X, Y,
+                SIZE</span><span class="c11 c0">)</span></li>
+    </ul>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>The most basic usage requires nothing but the stamp name. Don't forget the tick marks around the
+            name, like so:</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_yzcy3ot9rdzu-0 start" start="1">
+        <div class="comment">Puts an apple in the center of the screen, default size.</div>
+        <div class="button-run-docs" index="0"></div><textarea>stamp('apple')</textarea>
+        <div class="comment">Some stamps, like the spider, are animated!</div>
+        <div class="button-run-docs" index="1"></div><textarea>stamp('spider')</textarea>
+    </ol>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>From there, you can pass in extra parameters to change how the stamp appears.</span></p>
+    <p class="c6"><span></span></p>
+    <ol class="c10 lst-kix_scg4a0lyl3uv-0 start" start="1">
+        <div class="comment">Draw the apple with a size of 200 pixels.</div>
+        <div class="button-run-docs" index="2"></div><textarea>stamp('apple',200)</textarea>
+        <div class="comment">Draw a cat at position 100,100.</div>
+        <div class="button-run-docs" index="3"></div><textarea>stamp('cat',100,100)</textarea>
+        <div class="comment">Draw a dog at position 100,100, size of 50.</div>
+        <div class="button-run-docs" index="4"></div><textarea>stamp('dog',100,100,50)</textarea>
+    </ol>
+    <p class="c4 c19"><span></span></p>
+    <p class="c8"><span>Stamps are powerful, because once you've made one you can modify it in many ways. Every stamp
+            has its own set of commands you can call. (See the Stamp variables and Stamp commands for more
+            examples.)</span></p>
+    <p class="c6"><span></span></p>
+    <p class="c8"><span>This program creates a fruit, then proceeds to move, rotate, and resize it, all
+            instantly.</span></p>
+    <p class="c4 c19"><span class="c0"></span></p>
+    <ol class="c10 lst-kix_ffnki3wh2js-0 start" start="1">
+        <div class="button-run-docs" index="5"></div><textarea>fruit = stamp('lime')
+fruit.move(100,100)
+fruit.rotate(90)
+fruit.size(200)
+text(fruit.x)
+</textarea>
+    </ol>
+</div>
+
+</html>

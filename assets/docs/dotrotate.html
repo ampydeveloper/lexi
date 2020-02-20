@@ -1,0 +1,37 @@
+<html>
+    <button onclick="loadassets('find-commands');">GO BACK</button>    
+<div class="docs-panel"><h2 class="c24" id="h.ok1b63gvhm24"><span class="c21">.rotate()</span></h2><p class="c2 c6"><span class="c1"></span></p><p class="c2"><span class="c1">Lexi's rotate command makes it easier to rotate objects on the screen. You can rotate by a precise number of degrees (clockwise is positive), or in either the RIGHT or the LEFT direction. You can also specify how long a rotation should take to complete. This is expressed in milliseconds (thousandths of a second).</span></p><p class="c2 c6"><span class="c1"></span></p><ul class="c7 lst-kix_dcvfu2ms9c89-0 start"><li class="c2 c5"><span class="c19">stamp.rotate(DEGREES</span><span class="c19 c27">,MILLISECONDS</span><span class="c11">)</span></li><li class="c2 c5"><span class="c19">stamp.rotate(DIRECTION</span><span class="c19 c27">,DEGREES,MILLISECONDS</span><span class="c11">)</span></li><li class="c2 c5"><span class="c11">stamp.rotate()</span></li><li class="c2 c5"><span class="c19">text.rotate(DEGREES</span><span class="c19 c27">,MILLISECONDS</span><span class="c11">)</span></li><li class="c2 c5"><span class="c19">text.rotate(DIRECTION</span><span class="c19 c27">,DEGREES,MILLISECONDS</span><span class="c11">)</span></li><li class="c2 c5"><span class="c11">text.rotate()</span></li><li class="c2 c5"><span class="c19">circle.rotate(DEGREES</span><span class="c19 c27">,MILLISECONDS</span><span class="c11">)</span></li><li class="c2 c5"><span class="c19">circle.rotate(DIRECTION</span><span class="c19 c27">,DEGREES,MILLISECONDS</span><span class="c11">)</span></li><li class="c2 c5"><span class="c11">circle.rotate()</span></li></ul><p class="c2 c6"><span class="c1"></span></p><p class="c2"><span class="c1">In Lexi, 0 degrees points straight upward. From there, increasing degrees points you increasingly clockwise. So 90 degrees points toward 3 o'clock, 180 degrees to 6 o'clock, and so on.</span></p><p class="c2 c6"><span class="c1"></span></p><p class="c2"><span class="c1">This first example rotates the arrow stamp and the word 'arrow' to 90 degrees instantly when you tap the stamp.</span></p><ol class="c7 lst-kix_afe8i2vqvi01-0 start" start="1"><div class="button-run-docs" index="0"></div><textarea>a = stamp('arrow')
+b = text('arrow',CENTER)
+a.tap = function() {
+&nbsp; a.rotate(90)
+&nbsp; b.rotate(90)
+}</textarea></ol><p class="c2 c6"><span class="c1"></span></p><p class="c2"><span class="c1">This program rotates both objects to 45 degrees over 500 milliseconds.</span></p><ol class="c7 lst-kix_xsa50bsj62la-0 start" start="1"><div class="button-run-docs" index="1"></div><textarea>a = stamp('arrow')
+b = text('arrow',CENTER)
+a.tap = function() {
+&nbsp; a.rotate(45,500)
+&nbsp; b.rotate(45,500)
+}</textarea></ol><p class="c2 c6"><span class="c1"></span></p><p class="c2"><span class="c1">Using a direction rotates the object to point in that direction instantly.</span></p><ol class="c7 lst-kix_vf7bpvfl6ov6-0 start" start="1"><div class="button-run-docs" index="2"></div><textarea>a = stamp('arrow')
+b = text('arrow',CENTER)
+a.tap = function() {
+&nbsp; a.rotate(EAST)
+&nbsp; b.rotate(EAST)
+}</textarea></ol><p class="c2 c6"><span class="c1"></span></p><p class="c2"><span class="c1">Rotates LEFT (counter-clockwise) by 45 degrees.</span></p><ol class="c7 lst-kix_2cx4vg34emlx-0 start" start="1"><div class="button-run-docs" index="3"></div><textarea>a = stamp('arrow')
+b = text('arrow',CENTER)
+a.tap = function() {
+&nbsp; a.rotate(LEFT,45)
+&nbsp; b.rotate(LEFT,45)
+}</textarea></ol><p class="c2 c6"><span class="c1"></span></p><p class="c2"><span class="c1">Rotates LEFT by 45 degrees over 500 milliseconds.</span></p><ol class="c7 lst-kix_furpmkl4od70-0 start" start="1"><div class="button-run-docs" index="4"></div><textarea>a = stamp('arrow')
+b = text('arrow',CENTER)
+a.tap = function() {
+&nbsp; a.rotate(LEFT,45,500)
+&nbsp; b.rotate(LEFT,45,500)
+}</textarea></ol><p class="c2 c6"><span class="c1"></span></p><p class="c2"><span class="c1">Rotates the object instantly to a random direction. In this example, the stamp and text probably won't end up pointing in the same direction. They each get their own random direction.</span></p><ol class="c7 lst-kix_vafkx8nu1be7-0 start" start="1"><div class="button-run-docs" index="5"></div><textarea>a = stamp('arrow')
+b = text('arrow',CENTER)
+a.tap = function() {
+&nbsp; a.rotate()
+&nbsp; b.rotate()
+}</textarea></ol><p class="c2 c6"><span class="c1"></span></p><p class="c2"><span class="c1">All of these same commands can also be called on circles. Which seems odd, since there's no visible change to the circle when it rotates. But it's necessary for moving circles in the same way that stamps and text objects can move. Here's a simple example that shows why you might want to rotate a circle.</span></p><p class="c2 c6"><span class="c1"></span></p><ol class="c7 lst-kix_25gd1zkx69l1-0 start" start="1"><div class="button-run-docs" index="6"></div><textarea>c = circle(300,512,75)
+function loop() {
+&nbsp; c.move(UP,10)
+&nbsp; c.rotate(RIGHT,5)
+}</textarea></ol><p class="c2 c6"><span class="c1"></span></p></div></html>

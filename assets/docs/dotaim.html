@@ -1,0 +1,43 @@
+<html>
+    <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c24" id="h.2zc6hhgrivj4"><span class="c21">.aim()</span></h2>
+    <h2 class="c24 c36" id="h.ro7df0o0j5tq"><span class="c1"></span></h2>
+    <p class="c2"><span>Lexi's aim command rotates a stamp to point towards the coordinates you give it. </span></p>
+    <ul class="c7 lst-kix_yz4nazor4fp9-0 start">
+        <li class="c2 c5"><span class="c19">thing.aim(</span><span class="c19 c10">x,y</span><span class="c11">)</span>
+        </li>
+    </ul>
+    <p class="c2"><span class="c1">Here's a program that aims a rocket at wherever you drag on the screen.</span></p>
+    <h2 class="c24 c36" id="h.puslgd5725yn"><span class="c1"></span></h2>
+    <ol class="c7 lst-kix_7pvykz8dj3xw-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>rocket = stamp('rocket')
+    function drag() {
+    &nbsp; rocket.aim(x,y)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <p class="c2"><span class="c0">Here's a program that aims text. Note that it will usually make more sense if you
+            CENTER-align the text.</span></p>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <ol class="c7 lst-kix_zg2yneja6scp-0 start" start="1">
+        <div class="button-run-docs" index="1"></div><textarea>aimText = text('Aim^Text', CENTER,50)
+    function drag() {
+    &nbsp; aimText.aim(x,y)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <p class="c2"><span class="c0">While there won't be any visible difference, you can also aim a circle. This is
+            useful for controlling the direction you want to have a circle move. Here's an example:</span></p>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <ol class="c7 lst-kix_3hte6b39xadv-0 start" start="1">
+        <div class="button-run-docs" index="2"></div><textarea>c = circle(384,512,50,'green')
+    function touching() {
+    &nbsp; c.aim(x,y)
+    &nbsp; c.move(UP,5)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c0"></span></p>
+</div>
+
+</html>

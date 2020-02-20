@@ -1,0 +1,101 @@
+<html>
+    <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c24" id="h.k9xghkm7cwoq"><span class="c21">.size()</span></h2>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">Lexi's size command makes it easier to change the size of objects on the screen.
+            You specify the final size (in pixels) and the amount of time the change should take to complete. This is
+            expressed in milliseconds (thousandths of a second).</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ul class="c7 lst-kix_1yeslgkndwmg-0 start">
+        <li class="c2 c5"><span class="c19">stamp.size(</span><span class="c8">PIXELS</span><span
+                class="c8 c27">,MILLISECONDS</span><span class="c11">)</span></li>
+        <li class="c2 c5"><span class="c19">text.size(</span><span class="c8">FONTSIZE</span><span
+                class="c8 c27">,MILLISECONDS</span><span class="c11">)</span></li>
+        <li class="c2 c5"><span class="c19">circle.size(</span><span class="c8">PIXELS</span><span
+                class="c8 c27">,MILLISECONDS</span><span class="c11">)</span></li>
+    </ul>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">This program instantly resizes the arrow to 100 pixels in size when you tap
+            it.</span></p>
+    <ol class="c7 lst-kix_mw8z32qoi3il-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>a = stamp('arrow')
+    a.tap = function() {
+    &nbsp; a.size(100)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">This program instantly resizes the text to a font size of 30 when you tap it.</span>
+    </p>
+    <ol class="c7 lst-kix_p7su34sfrndf-0 start" start="1">
+        <div class="button-run-docs" index="1"></div><textarea>a = text('arrow',CENTER,100)
+    a.tap = function() {
+    &nbsp; a.size(30)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <p class="c2"><span class="c1">This program instantly resizes the circle to a radius of 50 pixels when you tap
+            it.</span></p>
+    <ol class="c7 lst-kix_d947rxtuud3z-0 start" start="1">
+        <div class="button-run-docs" index="2"></div><textarea>a = circle(384,512)
+    a.tap = function() {
+    &nbsp; a.size(50)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">Animates the stamp to 20 pixels in size over 500 milliseconds when you tap it.</span>
+    </p>
+    <ol class="c7 lst-kix_zf6vtiw4c9pi-0 start" start="1">
+        <div class="button-run-docs" index="3"></div><textarea>a = stamp('arrow')
+    a.tap = function() {
+    &nbsp; a.size(20,500)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">Animates the text to a font size of 30 over 500 milliseconds when you tap it.</span>
+    </p>
+    <ol class="c7 lst-kix_ihgjf0wptswr-0 start" start="1">
+        <div class="button-run-docs" index="4"></div><textarea>a = text('arrow',CENTER,100)
+    a.tap = function() {
+    &nbsp; a.size(30,500)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <p class="c2"><span class="c1">Animates the circle to a radius of 50 pixels over 500 milliseconds when you tap
+            it.</span></p>
+    <ol class="c7 lst-kix_tbmw2uczssq6-0 start" start="1">
+        <div class="button-run-docs" index="5"></div><textarea>a = circle(384,512)
+    a.tap = function() {
+    &nbsp; a.size(50,500)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">Resizes the stamp randomly when you tap it.</span></p>
+    <ol class="c7 lst-kix_hvuoemslb4nl-0 start" start="1">
+        <div class="button-run-docs" index="6"></div><textarea>a = stamp('arrow')
+    a.tap = function() {
+    &nbsp; a.size()
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">Resizes the text randomly when you tap it.</span></p>
+    <ol class="c7 lst-kix_9uu1d8ysi3w1-0 start" start="1">
+        <div class="button-run-docs" index="7"></div><textarea>a = text('arrow',CENTER,100)
+    a.tap = function() {
+    &nbsp; a.size()
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c0"></span></p>
+    <p class="c2"><span class="c1">Resizes the circle randomly when you tap it.</span></p>
+    <ol class="c7 lst-kix_20t164f9mp69-0 start" start="1">
+        <div class="button-run-docs" index="8"></div><textarea>a = circle(384,512)
+    a.tap = function() {
+    &nbsp; a.size()
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+</div>
+
+</html>

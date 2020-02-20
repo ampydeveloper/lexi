@@ -1,0 +1,127 @@
+<html>
+        <button onclick="loadassets('find-commands');">GO BACK</button>
+<div class="docs-panel">
+    <h2 class="c24" id="h.p1pgf2dyhgdr"><span class="c21">.move()</span></h2>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">Lexi's .move command moves a stamp, &nbsp;text object, or circle on the screen.
+            You can tell it to move to a specific location on the screen, or move in a specific direction by a specified
+            distance. You can also specify how long the move should take to complete. This number is expressed in
+            milliseconds (thousandths of a second).</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ul class="c7 lst-kix_4k1lbrun01fe-0 start">
+        <li class="c2 c5"><span class="c19">stamp.move(X,Y</span><span class="c19 c27">,MILLISECONDS</span><span
+                class="c11">)</span></li>
+        <li class="c2 c5"><span class="c19">stamp.move(DIRECTION</span><span
+                class="c19 c27">,DISTANCE,MILLISECONDS</span><span class="c11">)</span></li>
+        <li class="c2 c5"><span class="c11">stamp.move()</span></li>
+        <li class="c2 c5"><span class="c19">text.move(X,Y</span><span class="c19 c27">,MILLISECONDS</span><span
+                class="c11">)</span></li>
+        <li class="c2 c5"><span class="c19">text.move(DIRECTION</span><span
+                class="c19 c27">,DISTANCE,MILLISECONDS</span><span class="c11">)</span></li>
+        <li class="c2 c5"><span class="c11">text.move()</span></li>
+        <li class="c2 c5"><span class="c19">circle.move(X,Y</span><span class="c19 c27">,MILLISECONDS</span><span
+                class="c11">)</span></li>
+        <li class="c2 c5"><span class="c19">circle.move(DIRECTION</span><span
+                class="c19 c27">,DISTANCE,MILLISECONDS</span><span class="c11">)</span></li>
+        <li class="c2 c5"><span class="c11">circle.move()</span></li>
+    </ul>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">This program instantly moves the apple stamp to 200,200 and the text 'apple' to
+            200,300, and the circle to 200,250 when you tap on the screen.</span></p>
+    <ol class="c7 lst-kix_nnkp1ewh2bfx-0 start" start="1">
+        <div class="button-run-docs" index="0"></div><textarea>c = circle(384,550,150,'light green')
+    a = stamp('apple')
+    b = text('apple',CENTER,386,600)
+    function tap() {
+    &nbsp; a.move(200,200)
+    &nbsp; b.move(200,300)
+    &nbsp; c.move(200,250)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">This example does the same move, but animates the move over 1000 milliseconds (1
+            second).</span></p>
+    <ol class="c7 lst-kix_jn7sy3dgw5vl-0 start" start="1">
+        <div class="button-run-docs" index="1"></div><textarea>c = circle(384,550,150,'light green')
+    a = stamp('apple')
+    b = text('apple',CENTER,386,600)
+    function tap() {
+    &nbsp; a.move(200,200,1000)
+    &nbsp; b.move(200,300,1000)
+    &nbsp; c.move(200,250,1000)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">Handing in the name of a direction, moves a stamp, text object, or circle that
+            direction by a distance equal to its size.</span></p>
+    <ol class="c7 lst-kix_ogtvilh9c2qm-0 start" start="1">
+        <div class="button-run-docs" index="2"></div><textarea>c = circle(384,500,60,'light green')
+    a = stamp('apple')
+    b = text('apple',CENTER,386,600,50)
+    function tap() {
+    &nbsp; a.move(RIGHT)
+    &nbsp; b.move(RIGHT)
+    &nbsp; c.move(RIGHT)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">You can also add a second parameter to move it by a certain number of pixels.</span>
+    </p>
+    <ol class="c7 lst-kix_5dx0kz6wse36-0 start" start="1">
+        <div class="button-run-docs" index="3"></div><textarea>c = circle(384,550,'light green')
+    a = stamp('apple')
+    b = text('apple',CENTER,386,600)
+    function tap() {
+    &nbsp; a.move(UP,200)
+    &nbsp; b.move(UP,200)
+    &nbsp; c.move(UP,200)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">Adding a third parameter animates the move over that number of milliseconds.</span>
+    </p>
+    <ol class="c7 lst-kix_yj4yjmrmr6yp-0 start" start="1">
+        <div class="button-run-docs" index="4"></div><textarea>c = circle(384,550,'light green')
+    a = stamp('apple')
+    b = text('apple',CENTER,386,600)
+    function tap() {
+    &nbsp; a.move(UP,200,1000)
+    &nbsp; b.move(UP,200,1000)
+    &nbsp; c.move(UP,200,1000)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">Calling move with no parameters instantly moves the stamp, text object, or circle to
+            a random screen position. In this example, the stamp, &nbsp;text object, and circle probably won't end up
+            near each other. They each get their own random location.</span></p>
+    <ol class="c7 lst-kix_upyasml3m3lv-0 start" start="1">
+        <div class="button-run-docs" index="5"></div><textarea>c = circle(384,550,'light green')
+    a = stamp('apple')
+    b = text('apple',CENTER,386,600)
+    function tap(){
+    &nbsp; a.move()
+    &nbsp; b.move()
+    &nbsp; c.move()
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2 c39 c6"><span class="c1"></span></p>
+    <p class="c2"><span class="c1">Note that if you use a direction like UP or RIGHT, the actual direction the stamp,
+            text object, or circle moves can depend on the object's rotation. If a stamp, text object, or circle is
+            unrotated, UP means up. If an object is rotated 90 degrees (toward 3 o'clock), then UP will move it to the
+            right. Here's a little program that slowly rotates a watermelon. Every time you tap it moves UP, but as
+            you'll see, UP is relative to the stamp's rotation.</span></p>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <ol class="c7 lst-kix_sw2ndsavyo77-0 start" start="1">
+        <div class="button-run-docs" index="6"></div><textarea>w = stamp('watermelon')
+    w.rotate(360,15000)
+    function tap() {
+    &nbsp; w.move(UP, 20)
+    }</textarea>
+    </ol>
+    <p class="c2 c6"><span class="c1"></span></p>
+    <p class="c2"><span>If you want your stamp, text object, or circle to move UP regardless of its rotation, consider
+            trying the direction NORTH instead. NORTH in Lexi is always toward the top of your screen.</span></p>
+</div>
+
+</html>
