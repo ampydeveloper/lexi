@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Lexi</title>
+
+  <meta name="viewport" content="width=460">
+  <link rel="stylesheet" href="resources/css/style.css" />
+  <link rel="stylesheet" href="resources/css/codemirror-custom.css" /> 
+
+  <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,500,600,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:500,700' rel='stylesheet' type='text/css'>
+  
+  <script src='resources/js/lexi.js'></script>
+  <script src='resources/js/library.js'></script>
+
+  <!-- -->
+  <link rel="stylesheet" href="vendors/codemirror-5.43.0/codemirror.css" />
+  <script src='vendors/codemirror-5.43.0/codemirror-5.43.0-compiled.js'></script>
+  <script src='vendors/soundmanager2/soundmanager2.js'></script>
+  <script src='vendors/soundmanager2/soundmanager2_settings.js'></script>
+
+  <script src='resources/js/data/googlefonts.js'></script>
+  <script src='resources/js/data/fonts.js'></script>
+  <script src='resources/js/data/sounds.js'></script>
+  <script src='resources/js/data/songs.js'></script>
+  <script src='resources/js/data/stamps.js'></script>
+  <script src='resources/js/data/stampList.js'></script>
+  <script src='resources/js/data/colors.js'></script>
+  <script src='resources/js/data/pictures.js'></script> 
+
+  <script src='resources/js/common.js'></script>
+  <script src='resources/js/commands/command.js'></script>
+  <script src='resources/js/commands/drawingcommands.js'></script>
+  <script src='resources/js/commands/generalcommands.js'></script>
+  <script src='resources/js/commands/interactions.js'></script>
+  <script src='resources/js/commands/audio.js'></script>
+
+  <script src='resources/js/drawing-elements/drawingelement.js'></script>
+  <script src='resources/js/drawing-elements/stamp.js'></script>
+  <script src='resources/js/drawing-elements/text.js'></script>
+  <script src='resources/js/drawing-elements/box.js'></script>
+  <script src='resources/js/drawing-elements/circle.js'></script>
+  <script src='resources/js/drawing-elements/line.js'></script>
+  <!-- -->
+
+</head>
+
+<body class="code-page">
+  <div id="assets-panel" class="popdown visible">
+    <div id="assets-header">
+      <div id="asset-tags" class="asset-tags">
+        <!-- <a href="#find-stamps" onclick="loadassets('find-stamps')" title="Stamps">Stamps</a>
+        <a href="#find-fills" onclick="loadassets('find-fills')" title="Fills">Fills</a>
+        <a href="#find-colors" onclick="loadassets('find-colors')" title="Colors">Colors</a>
+        <a href="#find-sounds" onclick="loadassets('find-sounds')" title="Sounds">Sounds</a>
+        <a href="#find-songs" onclick="loadassets('find-songs')" title="Songs">Songs</a> -->
+        <!-- <a id="find-fonts-link" onclick="loadassets('find-fonts')" href="#find-fonts" title="Fonts">Fonts</a> -->
+        <a id="find-commands-link" onclick="loadassets('find-commands')" class="commands" href="#find-commands" title="Commands">Commands</a>
+      </div>
+    </div>
+    <div id="assets-content">
+      <center>Loading...</center>
+    </div>
+  </div>
+
+  <div id="tablet" class="left">
+    <div class="tablet-back">
+      <div id="tablet-overlay"></div>
+    </div>
+    <div class="tablet-front">
+      <canvas width="484" height="712" id="tablet-color"></canvas>
+      <div id="tablet-overlay"></div>
+      <div id="tablet-screen">
+        <div id="error-panel">
+          <h1>Oops! Bug!</h1>
+          <div id="error-help">
+            You have an error. Check your code carefully. Here's what the bug says:
+          </div>
+          <div id="error-message-panel">
+            <div id="error-line">On Line 5</div>
+            <div id="error-message">I don't know what <span class="code">a</span> is.</div>
+            <div id="error-translation">Error translation.</div>
+          </div>
+        </div>
+
+        <div id="coordinate-tick-panel" class="hidden">
+          <div id="coordinate-tick-x"></div>
+          <div id="coordinate-tick-y"></div>
+        </div>
+
+        <canvas width="768" height="1024" id="tablet-canvas" class="visible"></canvas> <!-- main canvas-->
+      </div>
+      <div id="tablet-title">My Tablet</div>
+    </div>
+  </div>
+
+  <div id="preload-container">
+    <img src="resources/img/icons-cute-large.png" id="icons-cute-large" alt="" />
+    <img src="resources/img/stamp-not-found.png" id="stamp-not-found" alt="" />
+    <img src="resources/img/tablet-i-color.png" id="tablet-i-color" alt="" />
+    <img src="resources/img/tablet.png" alt="" />
+  </div>
+
+  <script>
+    var library = {};
+    var lexi = lexi || {};
+
+    window.onload = function() {
+
+      var tabletColorCanvas = document.getElementById('tablet-color');
+      var tabletColorCtx = tabletColorCanvas.getContext('2d');
+      tabletColorCtx.drawImage(document.getElementById('tablet-i-color'), 0, 0);
+
+      var settings = {};
+      settings.canvas = document.getElementById('tablet-canvas');
+      settings.canvasScale = 0.5;
+
+      library = new lexi.Library(settings);
+
+    };
+
+
+    function runcode(code) {
+      code = code.replace(/´/g, "'");
+      var assetsArray = code.match(/(["'])(?:\\\1|.)*?\1/g) || [];
+
+      library.resetLibrary();
+      library.silence();
+
+      // Execute the code.
+      var runNow = lexi.bind(function() {
+        try {
+          var runcode = window.eval(code);
+        } catch (e) {
+          console.log("error on eval", e);
+        }
+      }, library);
+
+     
+      library.loadAssets_(assetsArray, runNow);
+    }
+
+  </script>
+ 
+
+  <script>
+    loadassets('find-commands');
+
+    function openAssetsPanel() {
+      loadassets('find-commands');
+      document.getElementById('assets-panel').classList.remove('hidden');
+      document.getElementById('assets-panel').classList.add('visible');
+    }
+
+    function closeAssetsPanel() {
+      document.getElementById('assets-panel').classList.add('hidden');
+      document.getElementById('assets-panel').classList.remove('visible');
+    }
+
+    function loadassets(hash) {
+      var ajax = false;
+      var assetsContentDiv = document.getElementById('assets-content');
+
+      if (window.XMLHttpRequest) {
+        ajax = new XMLHttpRequest();
+      } else if (window.ActiveXObject) {
+        ajax = new ActiveXObject('Microsoft.XMLHTTP');
+      }
+      ajax.open('GET', 'resources/views/' + hash + '.html', true);
+      ajax.onreadystatechange = function () {
+        if (ajax.readyState === 4) {
+          assetsContentDiv.innerHTML = ajax.responseText;
+          applyAssetInteractionHandlers();
+        }
+      };
+
+      ajax.send();
+    }
+
+    function applyAssetInteractionHandlers() {
+      var assetsContentDiv = document.getElementById('assets-content');
+
+      var textAreas = assetsContentDiv.getElementsByTagName('textarea');
+      var runButtons = assetsContentDiv.getElementsByClassName('button-run-docs');
+      var textAreasToConvert = [];
+      for (i = 0; i < textAreas.length; i++) {
+        textAreasToConvert.push(textAreas[i]);
+      }
+
+      for (i = 0; i < textAreasToConvert.length; i++) {
+        var textArea = textAreasToConvert[i];
+        var runButton = runButtons[i];
+
+        if (!runButton) {
+          continue;
+        }
+
+        runButton.editor = CodeMirror.fromTextArea(textArea, {
+          lineNumbers: false,
+          matchBrackets: false,
+          continueComments: 'Enter',
+          extraKeys: {
+            'Ctrl-Q': 'toggleComment'
+          },
+          theme: 'neat'
+        });
+
+        runButton.onclick = function () {
+          runcode(this.editor.getValue());
+        };
+      }
+    }
+  </script>
+
+</body>
+
+</html>
