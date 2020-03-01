@@ -17,7 +17,6 @@
   <script src='resources/js/lexi.js'></script>
   <script src='resources/js/library.js'></script>
 
-  <!-- -->
   <link rel="stylesheet" href="vendors/codemirror-5.43.0/codemirror.css" />
   <script src='vendors/codemirror-5.43.0/codemirror-5.43.0-compiled.js'></script>
   <script src='vendors/soundmanager2/soundmanager2.js'></script>
@@ -125,23 +124,7 @@
 
 
     function runcode(code) {
-      code = code.replace(/´/g, "'");
-      var assetsArray = code.match(/(["'])(?:\\\1|.)*?\1/g) || [];
-
-      library.resetLibrary();
-      library.silence();
-
-      // Execute the code.
-      var runNow = lexi.bind(function() {
-        try {
-          var runcode = window.eval(code);
-        } catch (e) {
-          console.log("error on eval", e);
-        }
-      }, library);
-
-     
-      library.loadAssets_(assetsArray, runNow);
+      library.runcode(code);
     }
 
   </script>
