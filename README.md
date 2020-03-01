@@ -3,7 +3,10 @@
 Lexi is a Javascript chess library that is used for creating fun 2D games, by using easy commands, and resources in library.
 
 
-### A typical top-level directory layout
+## Setup
+To run this project, install it locally 
+
+#Folder Structure Documentation
 
     .
     ├── src                     
@@ -96,23 +99,11 @@ Lexi is a Javascript chess library that is used for creating fun 2D games, by us
 ```js
     library.runcode(code);
 ```
+## Built With
 
-## Contributing
-
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
-
-## History
-
-TODO: Write history
-
-## Credits
-
-TODO: Write credits
+* [CodeMirror](https://codemirror.net) - codemirror-5.43.0
+* [SoundManager2](http://www.schillmania.com/projects/soundmanager2) - soundmanager2
 
 ## License
 
-TODO: Write license
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
