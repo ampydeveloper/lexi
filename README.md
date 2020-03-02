@@ -5,7 +5,8 @@ Lexi is a javascript library that is used for creating fun 2D games, by using ea
 
 ## Files Included
 
->Source version structure:
+>Source structure:
+
     .
     ├── src                     
     |    ├── resources                    # All written Javascript, CSS, images and HTML are included here
