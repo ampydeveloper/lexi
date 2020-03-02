@@ -15,7 +15,6 @@
   <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:500,700' rel='stylesheet' type='text/css'>
   
   <script src='resources/js/lexi.js'></script>
-  <script src='resources/js/library.js'></script>
 
   <link rel="stylesheet" href="vendors/codemirror-5.43.0/codemirror.css" />
   <script src='vendors/codemirror-5.43.0/codemirror-5.43.0-compiled.js'></script>
@@ -105,9 +104,7 @@
   </div>
 
   <script>
-    var library = {};
-    var lexi = lexi || {};
-
+    var library;
     window.onload = function() {
 
       var tabletColorCanvas = document.getElementById('tablet-color');
