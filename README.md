@@ -1,6 +1,6 @@
 # Lexi
 
-Lexi is a javascript library that is used for creating fun 2D games, by using easy commands, and resources in library.
+Lexi is a javascript library that is used for creating fun 2D games, by using easy commands and resources in library.
 
 
 ## Files Included
@@ -26,12 +26,12 @@ Lexi is a javascript library that is used for creating fun 2D games, by using ea
     |    |    |    |── commands               # All Drawing, General, Interactions, Audio and Dot commands are writen here
     |    |    |    |── data                   # List of all resources like images, fills, colors names, sounds and songs used by commands
     |    |    |    |── drawing-elements       # Class of all drawing elements - box, circle, line, stamp, text and drawingelement parent class
-    |    |    |    |── common.js          # Common functions like parsing string, manipulating arrays used in library
-    |    |    |    |── lexi.js            # Main library file defining all constants and construct functions
-    |    |    |── views                   # Containing all commands views and sample views
+    |    |    |    |── common.js              # Common functions like parsing string, manipulating arrays used in library
+    |    |    |    |── lexi.js                # Main library file defining all constants and construct functions
+    |    |    |── views                     # Containing all commands views and sample views
     |    ├── vendors                      # Third parties libraries
-    |    |      |── codemirror-5.43.0     # Use for creating code editor
-    |    |      |── soundmanger2          # Use for play and manging sound files
+    |    |    |── codemirror-5.43.0         # Use for creating code editor
+    |    |    |── soundmanger2              # Use for play and manging sound files
     |    ├── index.html                   # Document file presenting all commands and its examples
     ├── LICENSE
     └── README.md
