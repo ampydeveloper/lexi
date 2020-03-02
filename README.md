@@ -104,4 +104,4 @@ Lexi is a javascript library that is used for creating fun 2D games, by using ea
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
