@@ -73,7 +73,7 @@ Lexi is a javascript library that is used for creating fun 2D games, by using ea
 
 ## Usage
 
->Intialize library
+>Initialize library
 ```js
     var LexiLibrary = {};
     var lexi = lexi || {};
@@ -104,4 +104,4 @@ Lexi is a javascript library that is used for creating fun 2D games, by using ea
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
