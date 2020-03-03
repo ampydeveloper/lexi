@@ -1,39 +1,38 @@
 # Lexi
 
-Lexi is a Javascript chess library that is used for creating fun 2D games, by using easy commands, and resources in library.
+Lexi is a javascript library that is used for creating fun 2D games, by using easy commands and resources in library.
 
 
-## Setup
-To run this project, install it locally 
+## Files Included
 
-#Folder Structure Documentation
+>Source structure:
 
     .
     ├── src                     
-    |    ├── resources                    # All Js, CSS and assets
+    |    ├── resources                    # All written Javascript, CSS, images and HTML are included here
     |    |    |── css
-    |    |    |    |── codemirror-custom.css   # Customize code syntax color
-    |    |    |    |── style.css               # styling of tablet and other stuff
+    |    |    |    |── codemirror-custom.css  # Custom codemirror styles
+    |    |    |    |── style.css              # Styling of document file index.html 
     |    |    |  
     |    |    |── data
-    |    |    |      |── fills\assets                 # images use by fill command
-    |    |    |      |── songs\assets                 # mp3 file use by song command
-    |    |    |      |── sounds\assets                # mp3 file use by sound command
-    |    |    |      |── stamps\assets                # images use by stamp command
+    |    |    |    |── fills/assets           # Fill command images
+    |    |    |    |── songs/assets           # Song command mp3 files
+    |    |    |    |── sounds/assets          # Sound command mp3 files
+    |    |    |    |── stamps/assets          # Stamp command images
     |    |    | 
-    |    |    |── img                     # images use in example like tablet and play button
+    |    |    |── img                       # Images use in document file like tablet and play button
     |    |    | 
     |    |    |── js
-    |    |    |    |── commands           # define commands run by libraray 
-    |    |    |    |── data               # list of all resources like images, fills, colors name, sounds and songs
-    |    |    |    |── drawing-elements   # class of all drawing elements - box, circle, line, stamp, text and drawingelement parent class
-    |    |    |    |── common.js          # common function like parsing string, manuplating arrays
-    |    |    |    |── lexi.js            # main library file defining all contants and construct function
-    |    |    |── views                   # containing all commands list and other example views
-    |    ├── vendors                      # Third parties library usel
-    |    |      |── codemirror-5.43.0     # Use for creating code edtior
-    |    |      |── soundmanger2          # Use for play and manging sound files 
-    |    ├── index.html                   # Example
+    |    |    |    |── commands               # All Drawing, General, Interactions, Audio and Dot commands are writen here
+    |    |    |    |── data                   # List of all resources like images, fills, colors names, sounds and songs used by commands
+    |    |    |    |── drawing-elements       # Class of all drawing elements - box, circle, line, stamp, text and drawingelement parent class
+    |    |    |    |── common.js              # Common functions like parsing string, manipulating arrays used in library
+    |    |    |    |── lexi.js                # Main library file defining all constants and construct functions
+    |    |    |── views                     # Containing all commands views and sample views
+    |    ├── vendors                      # Third parties libraries
+    |    |    |── codemirror-5.43.0         # Use for creating code editor
+    |    |    |── soundmanger2              # Use for play and manging sound files
+    |    ├── index.html                   # Document file presenting all commands and its examples
     ├── LICENSE
     └── README.md
 
@@ -42,7 +41,6 @@ To run this project, install it locally
 
 ```html
 <script src='resources/js/lexi.js'></script>
-<script src='resources/js/library.js'></script>
 
 <link rel="stylesheet" href="vendors/codemirror-5.43.0/codemirror.css" />
 <script src='vendors/codemirror-5.43.0/codemirror-5.43.0-compiled.js'></script>
@@ -75,9 +73,9 @@ To run this project, install it locally
 
 ## Usage
 
->Intialize library
+>Initialize library
 ```js
-    var library = {};
+    var LexiLibrary = {};
     var lexi = lexi || {};
 
     window.onload = function() {
@@ -90,14 +88,14 @@ To run this project, install it locally
       settings.canvas = document.getElementById('tablet-canvas');
       settings.canvasScale = 0.5;
 
-      library = new lexi.Library(settings);
+      LexiLibrary = new lexi.Library(settings);
 
     };
 ```
 
 >Run code
 ```js
-    library.runcode(code);
+    LexiLibrary.runcode(code);
 ```
 ## Built With
 
@@ -106,4 +104,4 @@ To run this project, install it locally
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
