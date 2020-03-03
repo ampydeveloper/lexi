@@ -296,7 +296,7 @@ function reset(style) {
       }
   
       if (args.pictures[0].src &&
-          args.pictures[0].src.indexOf('resources/fillnotfound.png') > -1) {
+          args.pictures[0].src.indexOf('fillnotfound.png') > -1) {
         // If we get here, we haven't found a fill. Record library fact.
         if (library.onAssetLoadError_) {
           library.onAssetLoadError_(

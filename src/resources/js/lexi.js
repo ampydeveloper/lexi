@@ -213,12 +213,6 @@ lexi.Library = function(optional_settings) {
   this.preloadSounds_();
 
 
-  this.collabPath_ = settings['collabPath'];
-  this.collabId_ = ('' + Math.random()).replace('0.', '');
-  this.setCollabPath(this.collabPath_);
-  this.customAssetHash_ = settings['customAssetHash'] || undefined;
-
-
   var fontList = lexi.googleFontsNames || [];
 
   // if (lexi.isFeatureFlagOn('googleFonts')) {
@@ -263,60 +257,6 @@ lexi.Library.prototype.runcode =  function(code) {
  
   this.loadAssets_(assetsArray, runNow);
 }
-
-
-/**
- * Tells the library what datastore path should be used for exchanging set/get
- * calls between multiple users of the same app.
- * @param {string} path The datastore path.
- */
-lexi.Library.prototype.setCollabPath = function(path) {
-  
-  // Attempt to get an already established firebase object, either from the
-  // top frame or the window.
-  var existingFirebaseObject = null;
-  // if (lexi.canAccessTopFrame()) {
-  //   existingFirebaseObject = top['firebase'];
-  // } else {
-  //   existingFirebaseObject = window['firebase'];
-  // }
-  
-  // if (existingFirebaseObject && path) {
-
-  //   if (this.collabRef_) {
-  //     this.collabRef_.off('child_added', this.onCollab_);
-  //     this.collabRef_.remove();
-  //   }
-
-  //   this.collabPath_ = path;
-  //   this.collabRef_ = existingFirebaseObject.database().ref(this.collabPath_);
-  //   this.onCollab_ = function(childSnapshot) {
-
-  //     var command = childSnapshot.val();
-  //     if (window && window.get) {
-  //       if (command['collabId'] !== this.collabId_) {
-  //         if (window.get && (typeof window.get === 'function')) {
-  //           try {
-  //             window.get(command['args'][0],
-  //                        command['args'][1],
-  //                        command['args'][2],
-  //                        command['args'][3]);
-  //           } catch (e) {
-  //             if (this.onError_) {
-  //               this.onError_(e);
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-
-  //   }.bind(this);
-
-  //   this.collabRef_.on('child_added', this.onCollab_);
-  //   this.collabRef_.onDisconnect().remove();
-  // }
-};
-
 
 /**
  * Sets the JS error handling routine.
@@ -1372,7 +1312,8 @@ lexi.Library.prototype.loadAssets_ = function(assets, onComplete) {
       if (!this.loadedSounds_[name]) {
         // var path = "resources/data/songs/assets/" +  name + '.mp3';
         if (lexi.songs[name] && lexi.songs[name] !== true) {
-          
+          path = lexi.songs[name];
+          path = "resources/data/songs/assets/" + lexi.songs[name];
         } else if (lexi.sounds[name] && lexi.sounds[name] !== true) {
           path = lexi.sounds[name];
           path = "resources/data/sounds/assets/" + lexi.sounds[name];
