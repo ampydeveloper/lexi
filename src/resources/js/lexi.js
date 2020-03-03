@@ -256,7 +256,7 @@ lexi.Library.prototype.runcode =  function(code) {
     try {
       var runcode = window.eval(code);
     } catch (e) {
-      console.log("error on eval", e);
+      console.error("error on eval", e);
     }
   }, this);
 
@@ -460,8 +460,6 @@ lexi.Library.prototype.initializeGlobals_ = function() {
  * @return {Image} The loaded fill.
  */
 lexi.Library.prototype.loadFillPicture_ = function(name, url) {
-  console.log("316",name, url);
-  
   var img = this.document_.createElement('img');
   img.crossOrigin = 'anonymous';
   img.onload = lexi.bind(function() {
@@ -946,13 +944,12 @@ lexi.Library.prototype.parsePicture_ = function(image) {
   var url;
   if (lexi.pictures && lexi.pictures[imageName]) {
     url = lexi.pictures[imageName];
-    console.log("800", url);
     return this.loadFillPicture_(imageName, url);
   } else if (this.stampsByName_[imageName]) {
     return this.stampsByName_[imageName];
   }
 
-  return this.loadFillPicture_(imageName,'fillnotfound.png');
+  return this.loadFillPicture_(imageName,'resources/img/fillnotfound.png');
 };
 
 
@@ -1368,12 +1365,10 @@ lexi.Library.prototype.loadSound_ = function(
  */
 lexi.Library.prototype.loadAssets_ = function(assets, onComplete) {
 
-   console.log(assets, onComplete);
   // Look for assets we know about.
   for (var i = 0; i < assets.length; i++) {
     var name = cleanAssetName(assets[i]);
     if (lexi.sounds[name] || lexi.songs[name]) {
-      console.log(lexi.sounds[name], lexi.songs[name]);
       if (!this.loadedSounds_[name]) {
         // var path = "resources/data/songs/assets/" +  name + '.mp3';
         if (lexi.songs[name] && lexi.songs[name] !== true) {
@@ -1463,7 +1458,6 @@ lexi.Library.prototype.loadStampImage_ = function(name, onComplete, onError) {
     img.src = lexi.pictures[name];
   } else {
     img.src = 'resources/data/stamps/assets/' + name + '.png';
-    console.log(img.src);
   }
   return img;
 };

@@ -12,7 +12,6 @@ lexi.Command = function(library, functionName, args, z) {
       return;
     }
     this.library_.isRedrawingACommand_ = true;
-    console.log(this.functionName_);
     window[this.functionName_].apply(this.library_, this.args_);
     this.library_.isRedrawingACommand_ = false;
   };
